@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/build_nt_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:contentDescription="@string/cd_edit_nanotale"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/edit_nt_btn"
+                android:layout_width="@dimen/back_arrow_width"
+                android:layout_height="@dimen/back_arrow_height"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/tale"
+                android:onClick="editTale"
+                android:src="@drawable/ic_arrow_back_white" />
+
+            <TextView
+                android:id="@+id/nanotale_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/toolbar_height"
+                android:gravity="start|center_vertical"
+                android:onClick="editTale"
+                android:padding="@dimen/gen_padding"
+                android:text="@string/edit_nanotale"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/author_text_size"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <com.example.admin.nanotrial.nanotale.NanoTaleClass
+        android:id="@+id/nt_display"
+        android:layout_width="@dimen/saved_nt_card_width"
+        android:layout_height="@dimen/saved_nt_card_height"
+        android:layout_below="@id/build_nt_toolbar"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nt_format_option_height_hack"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/_options"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/colorPrimaryLight"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/alignment_options_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/colorLtGrey"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/left_align_btn"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cd_nt_text_align_left"
+                android:layout_weight="1"
+                android:background="@color/colorLtGrey"
+                android:src="@drawable/ic_format_align_left_black"/>
+
+            <ImageButton
+                android:id="@+id/center_align_btn"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cd_nt_text_align_center"
+                android:layout_weight="1"
+                android:background="@color/colorLtGrey"
+                android:src="@drawable/ic_format_align_center_black"/>
+
+            <ImageButton
+                android:id="@+id/right_align_btn"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:contentDescription="@string/cd_nt_text_align_right"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorLtGrey"
+                android:src="@drawable/ic_format_align_right_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nt_options"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/colorPrimaryLight">
+
+            <ImageButton
+                android:id="@+id/close_button"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/gen_padding"
+                android:layout_weight="1"
+                android:contentDescription="@string/cd_discard_nt_ques"
+                android:background="@color/colorPrimaryLight"
+                android:onClick="closeNTBuilder"
+                android:src="@drawable/ic_close_black"/>
+
+            <ImageButton
+                android:id="@+id/background_palette"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cd_change_background_color"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryLight"
+                android:onClick="displayColorPalette"
+                android:src="@drawable/ic_palette_black"/>
+
+            <ImageButton
+                android:id="@+id/font_alignment"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:contentDescription="@string/cd_change_text_alignment"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryLight"
+                android:onClick="changeNTAlignment"
+                android:src="@drawable/ic_format_align_justify_black"/>
+
+            <ImageButton
+                android:id="@+id/font_color_palette"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryLight"
+                android:contentDescription="@string/cd_change_font_color"
+                android:onClick="displayColorPalette"
+                android:src="@drawable/ic_text_format_black"/>
+
+            <ImageButton
+                android:id="@+id/completed_nt"
+                android:layout_width="@dimen/nt_format_button_width"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/gen_padding"
+                android:layout_weight="1"
+                android:contentDescription="@string/cd_save_nt"
+                android:background="@color/colorPrimaryLight"
+                android:onClick="saveNT"
+                android:src="@drawable/ic_done_black"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

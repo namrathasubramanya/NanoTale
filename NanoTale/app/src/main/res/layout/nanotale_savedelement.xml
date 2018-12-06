@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/saved_nt_card"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/gen_padding"
+    card_view:cardCornerRadius="@dimen/saved_nt_card_corner_radius"
+    card_view:cardElevation="6dp">
+
+    <RelativeLayout
+        android:layout_width="@dimen/saved_nt_card_width"
+        android:layout_height="@dimen/saved_nt_card_height">
+
+        <ImageView
+            android:id="@+id/saved_nt_tale"
+            android:layout_width="@dimen/saved_nt_picasso_width_hack"
+            android:layout_height="@dimen/saved_nt_card_text_height"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/tale" />
+
+        <ImageButton
+            android:id="@+id/saved_nt_share_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/saved_nt_card_share_elem_height"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="@dimen/gen_padding"
+            android:contentDescription="@string/cd_share_nt"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_share_black_24dp"/>
+
+        <ImageButton
+            android:layout_toEndOf="@id/saved_nt_share_btn"
+            android:id="@+id/saved_nt_modify_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/saved_nt_card_share_elem_height"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/cd_modify_nt"
+            android:layout_margin="@dimen/gen_padding"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_mode_edit_black_24dp"/>
+
+        <ImageButton
+            android:id="@+id/saved_nt_delete_btn"
+            android:src="@drawable/ic_delete_black_24px"
+            android:layout_width="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_delete_nt"
+            android:layout_toEndOf="@id/saved_nt_modify_btn"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/gen_padding"
+            android:layout_height="@dimen/saved_nt_card_share_elem_height"/>
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/color_picker_element_width"
+    android:layout_height="match_parent"
+    android:id="@+id/color_elem_parent">
+
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/color_elem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/tale"></ImageView>
+
+    <View
+        android:id="@+id/color_selected"
+        android:visibility="gone"
+        android:layout_gravity="bottom"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+</FrameLayout>
